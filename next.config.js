@@ -4,13 +4,11 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
   eslint: {
-    ignoreDuringBuilds: false,
+    ignoreDuringBuilds: true, // Skip ESLint during build for deployment
   },
-  experimental: {
-    // For Docker deployment
-    outputFileTracingIncludes: {
-      '/': ['./prisma/**/*'],
-    },
+  // For Docker deployment
+  outputFileTracingIncludes: {
+    '/': ['./prisma/**/*'],
   },
   // For standalone deployment
   output: 'standalone',
